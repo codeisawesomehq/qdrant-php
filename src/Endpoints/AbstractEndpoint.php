@@ -24,7 +24,7 @@ abstract class AbstractEndpoint
         $this->client = $client;
     }
 
-    public function setCollectionName(?string $collectionName): static
+    public function setCollectionName(?string $collectionName)
     {
         $this->collectionName = $collectionName;
 

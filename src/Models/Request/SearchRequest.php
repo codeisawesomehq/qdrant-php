@@ -25,9 +25,9 @@ class SearchRequest
 
     protected ?int $offset = null;
 
-    protected bool|array|null $withVector = null;
+    protected $withVector = null;
 
-    protected bool|array|null $withPayload = null;
+    protected $withPayload = null;
 
     protected ?float $scoreThreshold = null;
 
@@ -36,49 +36,49 @@ class SearchRequest
         $this->vector = $vector;
     }
 
-    public function setFilter(Filter $filter): static
+    public function setFilter(Filter $filter)
     {
         $this->filter = $filter;
 
         return $this;
     }
 
-    public function setScoreThreshold(float $scoreThreshold): static
+    public function setScoreThreshold(float $scoreThreshold)
     {
         $this->scoreThreshold = $scoreThreshold;
 
         return $this;
     }
 
-    public function setParams(array $params): static
+    public function setParams(array $params)
     {
         $this->params = $params;
 
         return $this;
     }
 
-    public function setLimit(int $limit): static
+    public function setLimit(int $limit)
     {
         $this->limit = $limit;
 
         return $this;
     }
 
-    public function setOffset(int $offset): static
+    public function setOffset(int $offset)
     {
         $this->offset = $offset;
 
         return $this;
     }
 
-    public function setWithPayload($withPayload): static
+    public function setWithPayload($withPayload)
     {
         $this->withPayload = $withPayload;
 
         return $this;
     }
 
-    public function setWithVector($withVector): static
+    public function setWithVector($withVector)
     {
         $this->withVector = $withVector;
 

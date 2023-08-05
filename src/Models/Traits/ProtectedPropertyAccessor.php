@@ -24,7 +24,7 @@ trait ProtectedPropertyAccessor
     {
         $prefix = 'get';
 
-        if (str_starts_with($method, $prefix)) {
+        if ($this->startsWith($method, $prefix)) {
             $property = lcfirst(substr($method, strlen($prefix)));
 
             if (property_exists($this, $property)) {
@@ -38,5 +38,10 @@ trait ProtectedPropertyAccessor
 
             throw new InvalidArgumentException("Property '$property' does not exist");
         }
+    }
+
+    public function startsWith( $haystack, $needle ) {
+        $length = strlen( $needle );
+        return substr( $haystack, 0, $length ) === $needle;
     }
 }
